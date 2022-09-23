@@ -59,8 +59,12 @@ int main() {
 	sql::Driver *driver;
 	sql::Connection *con;
 
+        // Connect to the MySQL
 	driver = get_driver_instance();
-	con = driver->connect("host", "user", "pass");
+	con = driver->connect("host", "user", "password");
+
+        // Connect to the MySQL #### database
+	/* con->setSchema("####"); */
 
 	if (!con) {
 		printf("Failed!\n");
@@ -70,6 +74,8 @@ int main() {
 	}
 
 	delete con;
+	
+	return 0;
 }
 ```
 `Result: Successful or Failed`
